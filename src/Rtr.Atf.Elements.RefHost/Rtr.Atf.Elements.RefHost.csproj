@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>..\..\UipFramework.ruleset</CodeAnalysisRuleSet>
+    <AssemblyName>Rtr.Atf.Elements.RefHost</AssemblyName>
+    <RootNamespace>Rtr.Atf.Elements.RefHost</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\AlertMark.png" />
+    <None Remove="Assets\QuestionMark.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\AlertMark.png" />
+    <EmbeddedResource Include="Assets\QuestionMark.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Rtr.Atf.Core\Rtr.Atf.Core.csproj" />
+    <ProjectReference Include="..\Rtr.Atf.Elements\Rtr.Atf.Elements.csproj" />
+  </ItemGroup>
+
+</Project>
